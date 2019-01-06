@@ -26,6 +26,10 @@ class PostsController < Sinatra::Base
   #   register Sinatra::Reloader
   # end
 
+  use Rack::Auth::Basic, "Restricted Area" do |username, password|
+    username == 'shah' and password == 'restricted'
+  end
+
   get '/' do
 
     @title = "Movie Review Homepage"
