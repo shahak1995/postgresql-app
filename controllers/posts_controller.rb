@@ -3,17 +3,17 @@ class PostsController < Sinatra::Base
   $posts = [{
     id: 0,
     title: "Aquaman",
-    body: "A fast-paced free-for-all with fantastic special effects and a solid story about a troubled young man who finds himself the last hope for two worlds."
+    body: "A fast-paced free-for-all with fantastic special effects and a solid story about a troubled young man who finds himself the last hope for two worlds. 3/5 stars"
  },
  {
      id: 1,
      title: "Bumblebee",
-     body: "Bumblebee does hold up as a fun, family-appropriate movie on its own terms, and redeems its beleaguered franchise in the process."
+     body: "Bumblebee does hold up as a fun, family-appropriate movie on its own terms, and redeems its beleaguered franchise in the process. 4/5 stars"
  },
  {
      id: 2,
      title: "Spider-Man: Into the Spider-Verse",
-     body: "Sony is asking us to take another leap off yet another Spider-man origin story, this time with Miles Morales. Lucky for Spider-man fans, with a fresh narrative, relationship building, and innovative visual effects, it's definitely a leap worth taking."
+     body: "Sony is asking us to take another leap off yet another Spider-man origin story, this time with Miles Morales. Lucky for Spider-man fans, with a fresh narrative, relationship building, and innovative visual effects, it's definitely a leap worth taking. 4.5/5 stars"
  }]
 
   # Sets root as the parent-directory of the current file
@@ -27,7 +27,7 @@ class PostsController < Sinatra::Base
   # end
 
   use Rack::Auth::Basic, "Restricted Area" do |username, password|
-    username == 'shah' and password == 'restricted'
+    username == 'admin' and password == 'admin'
   end
 
   get '/' do
